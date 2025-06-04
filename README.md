@@ -252,3 +252,87 @@ Program terminated.
 - Handles both even and odd matrix sizes for distinctness check
 - Maximum matrix size defined as 10 (compile-time constant)
 - Developed by Colin Wilder (3/23/2021)
+
+# Last project (main.cpp): <span style="font-size: 1.5em"> Quiz Game Application ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+
+A console-based quiz game that allows users to create questions and test their knowledge.
+
+## Features
+- **Two Modes:**
+  - Admin mode: Add questions and correct answers
+  - Player mode: Test your knowledge
+- **Scoring System:**
+  - Base points per question: 6
+  - Points halved for second attempts
+- **Question Management:**
+  - Supports up to 100 questions
+  - Multiple-choice format (A-D)
+- **User-Friendly Interface:**
+  - ANSI screen clearing
+  - Randomized question selection
+
+## How to Use
+
+### 1. Admin Mode
+1. Select "Add question data" from main menu
+2. Enter total number of questions (max 100)
+3. For each question:
+   - Enter the question text
+   - Enter four answer choices (A-D)
+   - Specify the correct answer
+
+### 2. Player Mode
+1. Select "Play game" from main menu
+2. Answer randomly selected questions:
+   - First attempt: 6 points if correct
+   - Second attempt: 3 points if correct
+3. View final score
+4. Option to return to main menu or exit
+
+## Technical Details
+- **Data Structures:**
+  - 2D array for question storage
+  - Vectors for answer management
+- **Key Functions:**
+  - `player_try()`: Admin question entry
+  - `play_game()`: Quiz gameplay logic
+  - `clrscr()`: ANSI-based screen clearing
+- **Error Handling:**
+  - Input validation for menu choices
+  - Range checking for question count
+  - Answer format verification
+
+## Example Usage
+```
+Choose an option to continue:
+
+1. Add question data
+2. Play game
+1
+
+Enter total number of questions (Maximum of 100): 2
+
+Enter question 1: 
+What is the capital of France?
+Enter choice 1: London
+Enter choice 2: Paris
+Enter choice 3: Berlin
+Enter choice 4: Madrid
+Enter correct choice (A-D): B
+```
+
+## Requirements
+- C++ compiler (g++, clang++, etc.)
+- Console supporting ANSI escape codes
+- Standard Library support
+
+## Notes
+- Questions persist only during program execution
+- Case-insensitive input for menu choices
+- Randomized question selection prevents repetition
+
+To compile and run:
+```bash
+g++ quiz_game.cpp -o quiz
+./quiz
+```
